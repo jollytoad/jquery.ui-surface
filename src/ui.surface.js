@@ -20,20 +20,18 @@ $.ui.surface = $.extend({}, $.ui.extras, $.ui.mouse, {
 
 		this._mouseInit();
 		
-		if (this.options.reticle !== false) {
+		if ( this.options.reticle !== false ) {
 			this.reticle = $(this.options.reticle, this.element);
 			
-			if (!this.reticle.length) {
-				this.reticle =
-					$('<div class="ui-reticle"></div>')
-						.css({
-							'position': 'absolute',
-							'left': 0,
-							'top': 0,
-							'background-repeat': 'no-repeat'
-						})
-						.prependTo(this.element);
+			if ( !this.reticle.length ) {
+				this.reticle = $('<div class="ui-reticle"></div>').prependTo(this.element);
 			}
+			
+			this.reticle.css({
+				'position': 'absolute',
+				'left': 0,
+				'top': 0
+			});
 		}
 		
 		this._updated();
@@ -44,7 +42,7 @@ $.ui.surface = $.extend({}, $.ui.extras, $.ui.mouse, {
 	},
 	
 	_updated: function() {
-		if (this.reticle && this.reticle.length) {
+		if ( this.reticle && this.reticle.length ) {
 			this.reticle.css(this._getPoint());
 		}
 	},
