@@ -1,4 +1,4 @@
-PACKAGE = jquery-ui-surface
+PACKAGE = jquery.ui-surface
 
 MODULES = \
 	ui.extras.js \
